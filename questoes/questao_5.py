@@ -45,7 +45,63 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 5")
+    
+maximo = 26
+ 
+ 
+def getTranslatedMessage(mensagem, chave):
+    traducao = ''
+ 
+    for simbolo in mensagem:
+         if simbolo.isalpha():
+             num = ord(simbolo)
+             num += chave
+             if simbolo.isupper():
+
+                if num > ord('Z'):
+                     num -= 26
+ 
+                elif num < ord('A'):
+                     num += 26
+ 
+            elif simbolo.islower():
+ 
+                if num > ord('z'):
+                     num -= 26
+ 
+                elif num < ord('a'):
+                     num += 26
+             traducao += chr(num)
+ 
+        else:
+ 
+            traducao += simbolo
+ 
+    return traducao
+ 
+ 
+check = 0
+chaveinput = input('Digite o ROT que deseja + a frase que deseja codificar: ')
+rot = chaveinput.split(' ', 1)
+chaves = rot[0].split('ROT', 1)
+if chaves[0] != '':
+    print('Error')
+ 
+else:
+    chave1 = chaves[1]
+    die = rot[1]
+    for i in rot[1]:
+        if i.isnumeric() == True:
+            check = 1
+        else:
+            continue
+    if (chave1.isnumeric() == False) or (int(chave1) < 0 or int(chave1) > maximo) or (check == 1):
+        print('Error')
+ 
+ 
+    else:
+        chave = int(chave1)
+        print(getTranslatedMessage(die, chave))
 
 
     

@@ -101,7 +101,7 @@ else:
  
     else:
         chave = int(chave1)
-        print(getTranslatedMessage(die, chave))
+        print(getTranslatedMessage(die, chave)) 
 
 
     

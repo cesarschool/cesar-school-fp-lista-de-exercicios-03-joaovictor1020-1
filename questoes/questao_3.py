@@ -38,7 +38,43 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 3")
+    
+    
+    Cima = 0
+	Baixo = 0
+	Direita = 0
+	Esquerda = 0
+
+def posicionamento(posicao):
+	global Cima
+	global Baixo
+	global Direita
+	global Esquerda
+
+	posicao = posicao.split()
+
+	if posicao[0] == 'CIMA':
+	Cima += int(posicao[1])
+	if posicao[0] == 'BAIXO':
+	Baixo += int(posicao[1])
+	if posicao[0] == 'ESQUERDA':
+	Direita += int(posicao[1])
+	if posicao[0] == 'DIREITA':
+	Esquerda += int(posicao[1])
+
+
+	while True:
+		posicao = input('Digite o Comando: ').upper()
+
+		if posicao == '':
+		break
+		else:
+		posicionamento(posicao)
+		continue
+
+	distancia = ((Cima - Baixo)**2 + (Direita - Esquerda)**2)**(1/2)
+	distancia = round(distancia)
+	print('A distância está em {}' .format(distancia))
 
 
     

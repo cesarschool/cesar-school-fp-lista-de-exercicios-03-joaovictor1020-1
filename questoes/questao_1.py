@@ -28,7 +28,27 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 1")
+
+    
+    lista = []
+	senha = input('Digite uma senha: '))
+	suicide = []
+
+	while senha:
+		suicide.append(senha)
+        if 6 <= len(senha) <= 12:
+
+            for i in range(0, len(senha) - 1):
+
+		    if senha[i].isalnum() or senha[i].isupper() or senha[i].islower() or senha[i].isspace():
+			continue
+
+		    if ('@' in senha) or ('#' in senha) or ('$' in senha):
+			lista.append(senha)
+		senha = str(input('Digite uma senha: '))
+
+	print(suicide)
+	print(lista)
     
 
 

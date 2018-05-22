@@ -27,7 +27,20 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 2")
+    
+    
+    lista = []
+	palavras = input('Entre com uma frase para ser verificada: ')
+	palavras = palavras.split()
+
+	for i in palavras:
+	    lista.append("{}:{}".format(i, palavras.count(i)))
+	
+    lista = list(set(lista))
+	lista = sorted(lista)
+	
+    for i in lista:
+		print(i)
 
 
 
